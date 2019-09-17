@@ -1,11 +1,10 @@
 {
   "name": "@typecollections/react-image-magnify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Type definition files for react-image-magnify library",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/types-stack/react-image-magnify.git"
@@ -20,5 +19,7 @@
   "bugs": {
     "url": "https://github.com/types-stack/react-image-magnify/issues"
   },
-  "homepage": "https://github.com/types-stack/react-image-magnify#readme"
+  "homepage": "https://github.com/types-stack/react-image-magnify#readme",
+  "main": "",
+  "types": "index"
 }
