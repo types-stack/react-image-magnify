@@ -1,6 +1,6 @@
 {
   "name": "@typecollections/react-image-magnify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type definition files for react-image-magnify library",
   "main": "index.js",
   "scripts": {
