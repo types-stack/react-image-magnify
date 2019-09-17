@@ -1,0 +1,24 @@
+{
+  "name": "@typecollections/react-image-magnify",
+  "version": "1.0.0",
+  "description": "Type definition files for react-image-magnify library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/types-stack/react-image-magnify.git"
+  },
+  "keywords": [
+    "react-image-magnify",
+    "typescript",
+    "type-definition"
+  ],
+  "author": "Sumit Parakh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/types-stack/react-image-magnify/issues"
+  },
+  "homepage": "https://github.com/types-stack/react-image-magnify#readme"
+}
