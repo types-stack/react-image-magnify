@@ -1,20 +1,20 @@
-// Type definitions for react-image-magnify 1.0.0
+// Type definitions for react-image-magnify 2.7
 // Project: https://github.com/gaearon/react-side-effect
-// Definitions by: Sumit Parakh <https://github.com/sumitparakh/>
+// Definitions by: Sumit Parakh <https://github.com/sumitparakh>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// TypeScript Version: 2.8
+
+/// <reference types="react"/>
 
 declare module 'react-image-magnify' {
-
-    import React from 'react';
-
     interface CommonImageType {
         src: string;
         srcSet?: string;
         sizes?: string;
-        onLoad?: Function,
-        onError?: Function
+        onLoad?: () => void;
+        onError?: () => void;
     }
-    //TODO: implement conditional types
+    // TODO: implement conditional types
     interface SmallImageType extends CommonImageType {
         /**
          * Required if isFluidWidth is not set
@@ -99,7 +99,6 @@ declare module 'react-image-magnify' {
          */
         enlargedImageStyle?: React.CSSProperties;
 
-
         // Interation properties
 
         /**
@@ -144,7 +143,6 @@ declare module 'react-image-magnify' {
          */
         pressMoveThreshold?: number;
 
-
         // Behavioral props
 
         /**
@@ -178,7 +176,7 @@ declare module 'react-image-magnify' {
         /**
          * Reference to a component class or functional component. A Default is provided.
          */
-        hintComponent?: Function;
+        hintComponent?: () => void;
 
         /**
          * Only show hint until the first interaction begins.
@@ -218,16 +216,14 @@ declare module 'react-image-magnify' {
         /**
          * Specify a custom lens component.
          */
-        lensComponent?: Function;
+        lensComponent?: () => void;
     }
 
     /**
      * A responsive React image zoom component for touch and mouse.
      */
     class ReactImageMagnify extends React.Component<ReactImageMagnifyProps> {
-
     }
 
     export default ReactImageMagnify;
 }
-
