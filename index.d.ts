@@ -5,7 +5,7 @@
 
 declare module 'react-image-magnify' {
 
-    import * as React from 'react';
+    import React from 'react';
 
     interface CommonImageType {
         src: string;
@@ -16,22 +16,214 @@ declare module 'react-image-magnify' {
     }
     //TODO: implement conditional types
     interface SmallImageType extends CommonImageType {
-        width?: number; // (required if isFluidWidth is not set)
-        height?: number; // (required if isFluidWidth is not set)
+        /**
+         * Required if isFluidWidth is not set
+         */
+        width?: number;
+
+        /**
+         * Required if isFluidWidth is not set
+         */
+        height?: number;
         alt?: string;
-        isFluidWidth: boolean; // default false
+
+        /**
+         * Default: false
+         */
+        isFluidWidth: boolean;
     }
 
     interface LargeImageType extends CommonImageType {
         width: number;
         height: number;
+
+        /**
+         * Defaults to empty string
+         */
         alt?: string;
     }
 
     interface ReactImageMagnifyProps {
+        /**
+         * Small image information.
+         */
         smallImage: SmallImageType;
+
+        /**
+         * Large image information
+         */
         largeImage: LargeImageType;
+
+        /**
+         * CSS class applied to root container element.
+         */
+        className?: string;
+
+        /**
+         * Style applied to root container element.
+         */
+        style?: React.CSSProperties;
+
+        /**
+         * CSS class applied to small image element.
+         */
+        imageClassName?: string;
+
+        /**
+         * Style applied to small image element.
+         */
+        imageStyle?: React.CSSProperties;
+
+        /**
+         * Style applied to tinted lens.
+         */
+        lensStyle?: React.CSSProperties;
+
+        /**
+         * CSS class applied to enlarged image container element.
+         */
+        enlargedImageContainerClassName?: string;
+
+        /**
+         * Style applied to enlarged image container element.
+         */
+        enlargedImageContainerStyle?: React.CSSProperties;
+
+        /**
+         * CSS class applied to enlarged image element.
+         */
+        enlargedImageClassName?: string;
+
+        /**
+         * Style applied to enlarged image element.
+         */
+        enlargedImageStyle?: React.CSSProperties;
+
+
+        // Interation properties
+
+        /**
+         * Milliseconds duration of magnified image fade in/fade out.
+         * 
+         * Default: 300
+         */
+        fadeDurationInMs?: number;
+
+        /**
+         * Milliseconds to delay hover trigger.
+         * 
+         * Default: 250
+         */
+        hoverDelayInMs?: number;
+
+        /**
+         * Milliseconds to delay hover-off trigger.
+         * 
+         * Default: 150
+         */
+        hoverOffDelayInMs?: number;
+
+        /**
+         * Activate magnification immediately on touch. May impact scrolling.
+         * 
+         * Default: false
+         */
+        isActivatedOnTouch?: boolean;
+
+        /**
+         * Milliseconds to delay long-press activation (long touch).
+         * 
+         * Default: 500
+         */
+        pressDuration?: number;
+
+        /**
+         * Pixels of movement allowed during long-press activation.
+         * 
+         * Default: 5
+         */
+        pressMoveThreshold?: number;
+
+
+        // Behavioral props
+
+        /**
+         * Enlarged image placement. Can be 'beside' or 'over'.
+         * 
+         * Default: beside(over for touch)
+         */
+        enlargedImagePosition?: string;
+
+        /**
+         * Specify enlarged image container dimensions as an object with width and height properties. 
+         * Values may be expressed as a percentage (e.g. '150%') or a number (e.g. 200). 
+         * Percentage is based on small image dimension. Number is pixels. 
+         * Not applied when enlargedImagePosition is set to 'over', the default for touch input.
+         */
+        enlargedImageContainerDimensions?: { width: number | string; height: number | string };
+
+        /**
+         * Render enlarged image into an HTML element of your choosing by specifying the target element id. 
+         * Requires React v16. Ignored for touch input by default - see isEnlargedImagePortalEnabledForTouch.
+         */
+        enlargedImagePortalId?: string;
+
+        /**
+         * Specify portal rendering should be honored for touch input.
+         * 
+         * Default: false
+         */
+        isEnlargedImagePortalEnabledForTouch?: boolean;
+
+        /**
+         * Reference to a component class or functional component. A Default is provided.
+         */
+        hintComponent?: Function;
+
+        /**
+         * Only show hint until the first interaction begins.
+         * 
+         * Default: true
+         */
+        shouldHideHintAfterFirstActivation?: boolean;
+
+        /**
+         * Enable hint feature.
+         * 
+         * Default: false
+         */
+        isHintEnabled?: boolean;
+
+        /**
+         * Hint text for mouse.
+         * 
+         * Default: Hover to Zoom
+         */
+        hintTextMouse?: string;
+
+        /**
+         * Hint text for touch.
+         * 
+         * Default: Long-Touch to Zoom
+         */
+        hintTextTouch?: string;
+
+        /**
+         * Specify a positive space lens in place of the default negative space lens.
+         * 
+         * Default: false
+         */
+        shouldUsePositiveSpaceLens?: boolean;
+
+        /**
+         * Specify a custom lens component.
+         */
+        lensComponent?: Function;
     }
+
+    /**
+     * A responsive React image zoom component for touch and mouse.
+     */
     class ReactImageMagnify extends React.Component<ReactImageMagnifyProps> {
 
     }
