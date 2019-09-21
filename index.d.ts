@@ -1,8 +1,8 @@
-// Type definitions for react-image-magnify 0.0.1
+// Type definitions for react-image-magnify 1.0.0
 // Project: https://github.com/gaearon/react-side-effect
 // Definitions by: Sumit Parakh <https://github.com/sumitparakh/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-
+/// <reference path="../react/index.d.ts" />
 declare module 'react-image-magnify' {
 
     import React from 'react';
@@ -104,42 +104,42 @@ declare module 'react-image-magnify' {
 
         /**
          * Milliseconds duration of magnified image fade in/fade out.
-         * 
+         *
          * Default: 300
          */
         fadeDurationInMs?: number;
 
         /**
          * Milliseconds to delay hover trigger.
-         * 
+         *
          * Default: 250
          */
         hoverDelayInMs?: number;
 
         /**
          * Milliseconds to delay hover-off trigger.
-         * 
+         *
          * Default: 150
          */
         hoverOffDelayInMs?: number;
 
         /**
          * Activate magnification immediately on touch. May impact scrolling.
-         * 
+         *
          * Default: false
          */
         isActivatedOnTouch?: boolean;
 
         /**
          * Milliseconds to delay long-press activation (long touch).
-         * 
+         *
          * Default: 500
          */
         pressDuration?: number;
 
         /**
          * Pixels of movement allowed during long-press activation.
-         * 
+         *
          * Default: 5
          */
         pressMoveThreshold?: number;
@@ -149,28 +149,28 @@ declare module 'react-image-magnify' {
 
         /**
          * Enlarged image placement. Can be 'beside' or 'over'.
-         * 
+         *
          * Default: beside(over for touch)
          */
         enlargedImagePosition?: string;
 
         /**
-         * Specify enlarged image container dimensions as an object with width and height properties. 
-         * Values may be expressed as a percentage (e.g. '150%') or a number (e.g. 200). 
-         * Percentage is based on small image dimension. Number is pixels. 
+         * Specify enlarged image container dimensions as an object with width and height properties.
+         * Values may be expressed as a percentage (e.g. '150%') or a number (e.g. 200).
+         * Percentage is based on small image dimension. Number is pixels.
          * Not applied when enlargedImagePosition is set to 'over', the default for touch input.
          */
         enlargedImageContainerDimensions?: { width: number | string; height: number | string };
 
         /**
-         * Render enlarged image into an HTML element of your choosing by specifying the target element id. 
+         * Render enlarged image into an HTML element of your choosing by specifying the target element id.
          * Requires React v16. Ignored for touch input by default - see isEnlargedImagePortalEnabledForTouch.
          */
         enlargedImagePortalId?: string;
 
         /**
          * Specify portal rendering should be honored for touch input.
-         * 
+         *
          * Default: false
          */
         isEnlargedImagePortalEnabledForTouch?: boolean;
@@ -182,35 +182,35 @@ declare module 'react-image-magnify' {
 
         /**
          * Only show hint until the first interaction begins.
-         * 
+         *
          * Default: true
          */
         shouldHideHintAfterFirstActivation?: boolean;
 
         /**
          * Enable hint feature.
-         * 
+         *
          * Default: false
          */
         isHintEnabled?: boolean;
 
         /**
          * Hint text for mouse.
-         * 
+         *
          * Default: Hover to Zoom
          */
         hintTextMouse?: string;
 
         /**
          * Hint text for touch.
-         * 
+         *
          * Default: Long-Touch to Zoom
          */
         hintTextTouch?: string;
 
         /**
          * Specify a positive space lens in place of the default negative space lens.
-         * 
+         *
          * Default: false
          */
         shouldUsePositiveSpaceLens?: boolean;
