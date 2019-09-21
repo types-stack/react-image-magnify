@@ -2,7 +2,7 @@
 // Project: https://github.com/gaearon/react-side-effect
 // Definitions by: Sumit Parakh <https://github.com/sumitparakh/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-/// <reference path="../react/index.d.ts" />
+
 declare module 'react-image-magnify' {
 
     import React from 'react';
