@@ -1,6 +1,6 @@
 {
   "name": "@typecollections/react-image-magnify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Type definition files for react-image-magnify library",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
